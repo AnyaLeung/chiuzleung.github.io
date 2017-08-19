@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hash Table | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一种数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。 实现各种语言都提供了散列表的视线，python中是字典，如： 123dic = &amp;#123;&amp;#125; #or dic = dict()dic[&amp;quot;anya&amp;quot;] = 1  适用范围 模拟映射关系 大海捞针的寻找，如DNS解析（域名-&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hash Table">
+<meta property="og:url" content="http://yoursite.com/2017/08/19/Hash-Table/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="一种数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。 实现各种语言都提供了散列表的视线，python中是字典，如： 123dic = &amp;#123;&amp;#125; #or dic = dict()dic[&amp;quot;anya&amp;quot;] = 1  适用范围 模拟映射关系 大海捞针的寻找，如DNS解析（域名-&amp;">
+<meta property="og:updated_time" content="2017-08-19T06:20:04.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hash Table">
+<meta name="twitter:description" content="一种数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。 实现各种语言都提供了散列表的视线，python中是字典，如： 123dic = &amp;#123;&amp;#125; #or dic = dict()dic[&amp;quot;anya&amp;quot;] = 1  适用范围 模拟映射关系 大海捞针的寻找，如DNS解析（域名-&amp;">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Hash-Table" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/19/Hash-Table/" class="article-date">
+  <time datetime="2017-08-19T06:10:25.000Z" itemprop="datePublished">2017-08-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hash Table
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一种数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。<br><br><br></p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>各种语言都提供了散列表的视线，python中是字典，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dic = &#123;&#125; #or dic = dict()</div><div class="line"></div><div class="line">dic[&quot;anya&quot;] = 1</div></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><ul>
+<li><em>模拟映射关系</em><br></li>
+<li>大海捞针的寻找，如DNS解析（域名-&gt;IP地址)<br></li>
+<li><em>防止重复</em><br></li>
+<li><em>cookie</em>，原理：让服务器把网页记住，需要的时候直接发给用户<br></li>
+</ul>
+<p><br></p>
+<h2 id="collision-冲突"><a href="#collision-冲突" class="headerlink" title="collision(冲突)"></a>collision(冲突)</h2><p>两个键映射到同一个位置<br><br>solution: 在这个位置存储一个链表</p>
+<p><br></p>
+<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><ul>
+<li>平均情况下，查找、插入、删除的时间复杂度都是O(1) <br><br>而O(1)不意味着马上，而是<strong>不管规模多大，所需时间相同</strong> 。<em>因为我们是通过给Hash Function传入key而获得value的，假设这个位置上只有一个值，在平均情况下时间复杂度是O(1)，而且不随规模增大而改变</em><br><br></li>
+<li>最糟情况(collision)存在大量冲突，时间复杂度是O(n) <br><br>冲突时的时间复杂度是O(1) + O(load_factor) = O(1 + load_factor)，所以最糟情况就是O(n)</li>
+</ul>
+<p><br></p>
+<h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><p>Hash Table避免冲突有赖于<strong>较低的填装因子和良好的散列函数</strong> </p>
+<h3 id="装填因子"><a href="#装填因子" class="headerlink" title="装填因子"></a>装填因子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">填装因子 = 散列表包含的元素数 / 位置总数</div></pre></td></tr></table></figure>
+<p>调整长度(resizing)：当装填因子太大的时候，需要在散列表中添加位置 <br><br>装填因子越低，效率越高 <br><br>当装填因子大于<strong>0.7</strong>，需要调整长度。调整长度的开销很大，但平均而言，考虑调整长度的开销，时间复杂度也是O(1)(喵喵?)</p>
+<h3 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h3><p>良好的散列函数让数组中的值均匀分布，而糟糕的导致大量冲突(可以看一下SHA函数)</p>
+<p><br></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>哈希表一般不用自己实现，编程语言提供了它的视线，并假定时间复杂度是O(1)。</li>
+<li>自己实现的话，可以用数组和Hash Function。</li>
+<li>Hash Function应尽量避免冲突，并降低装填因子。</li>
+<li>装填因子大于0.7时，需要resizing。</li>
+<li>哈希表用于模拟映射关系、防重、存储cookie。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/08/19/Hash-Table/" data-id="cj6iws09b00001i4nxrvjppvu" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">August 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/19/Hash-Table/">Hash Table</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
