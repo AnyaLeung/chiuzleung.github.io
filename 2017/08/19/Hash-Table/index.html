@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Anya Liang&#39;s Blog">
 <meta property="og:description" content="一种数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。 适用范围 模拟映射关系 大海捞针的寻找，如DNS解析（域名-&amp;gt;IP地址) 防止重复">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-08-19T07:45:11.000Z">
+<meta property="og:updated_time" content="2017-08-20T07:08:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hash Table">
 <meta name="twitter:description" content="一种数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。 适用范围 模拟映射关系 大海捞针的寻找，如DNS解析（域名-&amp;gt;IP地址) 防止重复">
@@ -330,7 +330,7 @@
 <li><em>cookie</em>，原理：让服务器把网页记住，需要的时候直接发给用户<br></li>
 </ul>
 <p><br></p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>各种语言都提供了散列表的视线，python中是字典，如：</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>各种语言都提供了散列表的实现，python中是字典，如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dic = &#123;&#125; #or dic = dict()</div><div class="line"></div><div class="line">dic[&quot;anya&quot;] = 1</div></pre></td></tr></table></figure>
 <p><br></p>
 <h2 id="collision-冲突"><a href="#collision-冲突" class="headerlink" title="collision(冲突)"></a>collision(冲突)</h2><p>两个键映射到同一个位置<br><br>solution: 在这个位置存储一个链表</p>
@@ -346,7 +346,7 @@
 <h3 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h3><p>良好的散列函数让数组中的值均匀分布，而糟糕的导致大量冲突(可以看一下SHA函数)</p>
 <p><br></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>哈希表一般不用自己实现，编程语言提供了它的视线，并假定时间复杂度是O(1)。</li>
+<li>哈希表一般不用自己实现，编程语言提供了它的实现，并假定时间复杂度是O(1)。</li>
 <li>自己实现的话，可以用数组和Hash Function。</li>
 <li>Hash Function应尽量避免冲突，并降低装填因子。</li>
 <li>装填因子大于0.7时，需要resizing。</li>
