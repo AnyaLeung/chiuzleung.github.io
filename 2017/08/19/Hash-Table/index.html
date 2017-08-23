@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。 适用范围 模拟映射关系 大海捞针的寻找，如DNS解析（域名-&amp;gt;IP地址) 防止重复">
+<meta name="description" content="一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hash Table">
 <meta property="og:url" content="http://yoursite.com/2017/08/19/Hash-Table/index.html">
 <meta property="og:site_name" content="Anya Liang&#39;s Blog">
-<meta property="og:description" content="一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。 适用范围 模拟映射关系 大海捞针的寻找，如DNS解析（域名-&amp;gt;IP地址) 防止重复">
+<meta property="og:description" content="一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-08-22T08:16:29.000Z">
+<meta property="og:updated_time" content="2017-08-23T01:30:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hash Table">
-<meta name="twitter:description" content="一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。 适用范围 模拟映射关系 大海捞针的寻找，如DNS解析（域名-&amp;gt;IP地址) 防止重复">
+<meta name="twitter:description" content="一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。">
 
 
 
@@ -322,15 +322,18 @@
       
 
       
-        <p>一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。<br></p>
+        <p>一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。<br><br><a id="more"></a></p>
 <h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><ul>
 <li><em>模拟映射关系</em><br></li>
-<li>大海捞针的寻找，如DNS解析（域名-&gt;IP地址)<br></li>
-<li><em>防止重复</em><br><a id="more"></a></li>
-<li><em>cookie</em>，原理：让服务器把网页记住，需要的时候直接发给用户<br></li>
+<li><p>大海捞针的寻找，如DNS解析（域名-&gt;IP地址)<br></p>
+</li>
+<li><p><em>cookie</em>，原理：让服务器把网页记住，需要的时候直接发给用户<br></p>
+</li>
+<li><em>防止重复</em><br></li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">searched = &#123;&#125;</div><div class="line"></div><div class="line">def check(name):</div><div class="line">&quot;&quot;&quot;</div><div class="line">	检查name是否检查过</div><div class="line">	检查过则返回False，未检查过则加入字典，并返回True</div><div class="line">&quot;&quot;&quot; </div><div class="line">    if searched.get(name): </div><div class="line">        print(&quot;alreade searched&quot;)</div><div class="line">        return False</div><div class="line">    else:</div><div class="line">        print(&quot;haven&apos;t searched&quot;)</div><div class="line">        searched[name] = True #加入字典</div><div class="line">        return True</div></pre></td></tr></table></figure>
 <p><br></p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>各种语言都提供了散列表的实现，python中是字典，如：</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>各种语言都提供了散列表的实现，python中为字典，如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dic = &#123;&#125; #or dic = dict()</div><div class="line"></div><div class="line">dic[&quot;anya&quot;] = 1</div></pre></td></tr></table></figure>
 <p><br></p>
 <h2 id="collision-冲突"><a href="#collision-冲突" class="headerlink" title="collision(冲突)"></a>collision(冲突)</h2><p>两个键映射到同一个位置<br><br>solution: 在这个位置存储一个链表</p>
@@ -350,7 +353,7 @@
 <li>自己实现的话，可以用数组和Hash Function。</li>
 <li>Hash Function应尽量避免冲突，并降低装填因子。</li>
 <li>装填因子大于0.7时，需要resizing。</li>
-<li>哈希表用于模拟映射关系、防重、存储cookie。</li>
+<li>哈希表用于模拟映射关系、防重复、存储cookie。</li>
 </ul>
 
       
