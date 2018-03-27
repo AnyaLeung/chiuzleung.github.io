@@ -87,17 +87,13 @@
 
 
 
-<meta name="description" content="一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hash Table">
-<meta property="og:url" content="http://yoursite.com/2017/08/19/Hash-Table/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Anya Liang&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
 <meta property="og:site_name" content="Anya Liang&#39;s Blog">
-<meta property="og:description" content="一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-08-23T01:30:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hash Table">
-<meta name="twitter:description" content="一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。">
+<meta name="twitter:title" content="Anya Liang&#39;s Blog">
 
 
 
@@ -125,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/19/Hash-Table/"/>
+  <link rel="canonical" href="http://yoursite.com/archives/2018/"/>
 
 
 
 
 
-  <title> Hash Table | Anya Liang's Blog </title>
+  <title> Archive | Anya Liang's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -156,7 +152,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  page-archive  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -272,176 +268,66 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
+  <section id="posts" class="posts-collapse">
+    <span class="archive-move-on"></span>
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/Hash-Table/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://ournohp4z.bkt.clouddn.com/may.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Anya Liang's Blog">
+    <span class="archive-page-counter">
+      
+      
+      
+        
+      
+      Um..! 4 posts in total. Keep on posting.
     </span>
 
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                Hash Table
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T14:10:25+08:00">
-                2017-08-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
 
       
       
-
-      
-        <p>一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。<br><br><a id="more"></a></p>
-<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><ul>
-<li><em>模拟映射关系</em><br></li>
-<li><p>大海捞针的寻找，如DNS解析（域名-&gt;IP地址)<br></p>
-</li>
-<li><p><em>cookie</em>，原理：让服务器把网页记住，需要的时候直接发给用户<br></p>
-</li>
-<li><em>防止重复</em><br></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">searched = &#123;&#125;</div><div class="line"></div><div class="line">def check(name):</div><div class="line">&quot;&quot;&quot;</div><div class="line">	检查name是否检查过</div><div class="line">	检查过则返回False，未检查过则加入字典，并返回True</div><div class="line">&quot;&quot;&quot; </div><div class="line">    if searched.get(name): </div><div class="line">        print(&quot;alreade searched&quot;)</div><div class="line">        return False</div><div class="line">    else:</div><div class="line">        print(&quot;haven&apos;t searched&quot;)</div><div class="line">        searched[name] = True #加入字典</div><div class="line">        return True</div></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>各种语言都提供了散列表的实现，python中为字典，如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dic = &#123;&#125; #or dic = dict()</div><div class="line"></div><div class="line">dic[&quot;anya&quot;] = 1</div></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="collision-冲突"><a href="#collision-冲突" class="headerlink" title="collision(冲突)"></a>collision(冲突)</h2><p>两个键映射到同一个位置<br><br>solution: 在这个位置存储一个链表</p>
-<p><br></p>
-<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><ul>
-<li>平均情况下，查找、插入、删除的时间复杂度都是O(1) <br><br>而O(1)不意味着马上，而是<strong>不管规模多大，所需时间相同</strong> 。<em>因为我们是通过给Hash Function传入key而获得value的，假设这个位置上只有一个值，在平均情况下时间复杂度是O(1)，而且不随规模增大而改变</em><br><br></li>
-<li>最糟情况(collision)存在大量冲突，时间复杂度是O(n) <br><br>冲突时的时间复杂度是O(1) + O(load_factor) = O(1 + load_factor)，所以最糟情况就是O(n)</li>
-</ul>
-<p><br></p>
-<h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><p>Hash Table避免冲突有赖于<strong>较低的填装因子和良好的散列函数</strong> </p>
-<h3 id="装填因子"><a href="#装填因子" class="headerlink" title="装填因子"></a>装填因子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">填装因子 = 散列表包含的元素数 / 位置总数</div></pre></td></tr></table></figure>
-<p>调整长度(resizing)：当装填因子太大的时候，需要在散列表中添加位置 <br><br>装填因子越低，效率越高 <br><br>当装填因子大于<strong>0.7</strong>，需要调整长度。调整长度的开销很大，但平均而言，考虑调整长度的开销，时间复杂度也是O(1)(喵喵?)</p>
-<h3 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h3><p>良好的散列函数让数组中的值均匀分布，而糟糕的导致大量冲突(可以看一下SHA函数)</p>
-<p><br></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>哈希表一般不用自己实现，编程语言提供了它的实现，并假定时间复杂度是O(1)。</li>
-<li>自己实现的话，可以用数组和Hash Function。</li>
-<li>Hash Function应尽量避免冲突，并降低装填因子。</li>
-<li>装填因子大于0.7时，需要resizing。</li>
-<li>哈希表用于模拟映射关系、防重复、存储cookie。</li>
-</ul>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-
-    <footer class="post-footer">
       
 
       
         
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/27/Leetcode-31/" rel="prev" title="Leetcode31 & Generating Permutations Lexicographically">
-                Leetcode31 & Generating Permutations Lexicographically <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
+        <div class="collection-title">
+          <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
         </div>
       
+      
 
       
-      
-    </footer>
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h1 class="post-title">
+        
+            <a class="post-title-link" href="/2018/03/27/Vim-Airline-Config/" itemprop="url">
+              
+                <span itemprop="name">SpaceVim符號不顯示解決方法</span>
+              
+            </a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-03-27T18:42:03+08:00"
+              content="2018-03-27" >
+          03-27
+        </time>
+      </div>
+
+    </header>
   </article>
 
 
 
-    <div class="post-spread">
-      
-    </div>
-  </div>
+    
+
+  </section>
+
+  
+
 
           
           </div>
@@ -449,10 +335,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -472,17 +354,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://ournohp4z.bkt.clouddn.com/may.jpeg"
@@ -526,22 +399,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#适用范围"><span class="nav-number">1.</span> <span class="nav-text">适用范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#collision-冲突"><span class="nav-number">3.</span> <span class="nav-text">collision(冲突)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度"><span class="nav-number">4.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能"><span class="nav-number">5.</span> <span class="nav-text">性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#装填因子"><span class="nav-number">5.1.</span> <span class="nav-text">装填因子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#散列函数"><span class="nav-number">5.2.</span> <span class="nav-text">散列函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -647,9 +504,11 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
+  
+    <script type="text/javascript" id="motion.page.archive">
+      $('.archive-year').velocity('transition.slideLeftIn');
+    </script>
+  
 
 
   
