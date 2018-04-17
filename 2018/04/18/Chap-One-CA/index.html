@@ -87,18 +87,18 @@
 
 
 
-<meta name="description" content="This article mainly talked about Performance, Amdal’s Law, Multicore Processors and parallelism. CPU time and Amdal’s Law are important。All articles taged ComputerOrganization are based on bookCompute">
+<meta name="description" content="This article mainly talked about Performance, Amdal’s Law, Multicore Processors and parallelism. CPU time and Amdal’s Law are important.All articles taged ComputerOrganization are based on bookCompute">
 <meta name="keywords" content="ComputerOrganization, Multi-core">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Computeter Abstractions and Technology">
+<meta property="og:title" content="Computer Abstractions and Technology">
 <meta property="og:url" content="http://yoursite.com/2018/04/18/Chap-One-CA/index.html">
 <meta property="og:site_name" content="Anya Liang&#39;s Blog">
-<meta property="og:description" content="This article mainly talked about Performance, Amdal’s Law, Multicore Processors and parallelism. CPU time and Amdal’s Law are important。All articles taged ComputerOrganization are based on bookCompute">
+<meta property="og:description" content="This article mainly talked about Performance, Amdal’s Law, Multicore Processors and parallelism. CPU time and Amdal’s Law are important.All articles taged ComputerOrganization are based on bookCompute">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-17T18:22:11.621Z">
+<meta property="og:updated_time" content="2018-04-17T18:26:05.675Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Computeter Abstractions and Technology">
-<meta name="twitter:description" content="This article mainly talked about Performance, Amdal’s Law, Multicore Processors and parallelism. CPU time and Amdal’s Law are important。All articles taged ComputerOrganization are based on bookCompute">
+<meta name="twitter:title" content="Computer Abstractions and Technology">
+<meta name="twitter:description" content="This article mainly talked about Performance, Amdal’s Law, Multicore Processors and parallelism. CPU time and Amdal’s Law are important.All articles taged ComputerOrganization are based on bookCompute">
 
 
 
@@ -132,7 +132,7 @@
 
 
 
-  <title> Computeter Abstractions and Technology | Anya Liang's Blog </title>
+  <title> Computer Abstractions and Technology | Anya Liang's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -304,7 +304,7 @@
             
             
               
-                Computeter Abstractions and Technology
+                Computer Abstractions and Technology
               
             
           </h1>
@@ -355,12 +355,12 @@
       
 
       
-        <p>This article mainly talked about <strong>Performance, Amdal’s Law, Multicore Processors and parallelism</strong>. <strong>CPU time and Amdal’s Law</strong> are important。<br><br>All articles taged <code>ComputerOrganization</code> are based on book<code>Computer Organization and Design: The Hardware/Software Interface</code>, 5e. <br></p>
+        <p>This article mainly talked about <strong>Performance, Amdal’s Law, Multicore Processors and parallelism</strong>. <strong>CPU time and Amdal’s Law</strong> are important.<br><br>All articles taged <code>ComputerOrganization</code> are based on book<code>Computer Organization and Design: The Hardware/Software Interface</code>, 5e. <br></p>
 <a id="more"></a>
-<h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p>系統的performance主要從<strong>response time and throughtput</strong>兩個方面來考量。<br><br><strong>Response time</strong> 是 單一工作所需要的<strong>時間</strong>。時間和performance成反比。<br><br><strong>Throughtput</strong> 是 單位時間所可以完成的<strong>工作</strong>。和performance成正比。<br><br>我們主要討論前者。<br><br><br><strong>Elapsed time</strong> 是程序在系統裡整個執行所需要的時間，包含了CPU的處理，I/O等，反映了系統的效能。<br><br><strong>CPU time</strong> 是CPU處理given job所需要的時間。程式在不同的CPU執行時，需要的時間長短不一樣，反應了各自CPU的performance。<br><br>我們知道，執行時間越長，performance越差(反比)，因而有</p>
+<h2 id="Performance"><a href="#Performance" class="headerlink" title="Performance"></a>Performance</h2><p>系統的performance主要從<strong>response time and throughtput</strong>兩個方面來考量。<br><br><strong>Response time</strong> 是 單一工作所需要的<strong>時間</strong>。和performance成反比。<br><br><strong>Throughtput</strong> 是 單位時間所可以完成的<strong>工作</strong>。和performance成正比。<br><br>我們主要討論前者。<br><br><br><strong>Elapsed time</strong> 是程序在系統裡整個執行所需要的時間，包含了CPU的處理，I/O等，反映了系統的效能。<br><br><strong>CPU time</strong> 是CPU處理given job所需要的時間。程式在不同的CPU執行時，需要的時間長短不一樣，反應了各自CPU的performance。<br><br>我們知道，執行時間越長，performance越差(反比)，因而有</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PERFORMANCE = 1 / EXECUTION TIME</div></pre></td></tr></table></figure>
 <h3 id="CPU-Time"><a href="#CPU-Time" class="headerlink" title="CPU Time"></a>CPU Time</h3><p>電腦最核心的部分就是處理器的部分，而處理器完全依據programmer的instruction進行運作。電腦本身是一個sequential circuit，而讓之正常運作需要一個clock進行對之的更新，因而電腦最基本的時間單位時<strong>clock cycle</strong>。我們可以用它來衡量CPU time。<br><br>就好像CPU time是我家每年吃多少斤大米，CPU clock cycles相當於吃了多少袋(clock)，clock cycle time是每袋大米有多少斤。就有:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">CPU time = CPU clock cycles * clock cycle time </div><div class="line">         = CPU clock cycles / clock cycle rate</div><div class="line">         (t = 1 / f)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">CPU time = CPU clock cycles * clock cycle time </div><div class="line">         = CPU clock cycles / clock cycle rate</div><div class="line">(t = 1 / f)</div></pre></td></tr></table></figure>
 <p>從上面式子，可知<code>提高performance =&gt; 降低CPU time =&gt; 降低CPU clock cycles OR 提升cycle rate</code>。<br>但往往要在rate和cycle週數之間做折衷。<br><br>如果把大米問題具體到人頭(instruction)的話，我家有我爸我媽我和我妹，我們都是instruction。假設我們吃的一樣多，那麼<code>吃的總袋數 = 幾個人 * 每人吃了幾袋</code>:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">CPU clock cycles = instruction count * clock per instruction(CPI)</div><div class="line"></div><div class="line">CPU time = CPU clock cycle * cycle time </div><div class="line">（重要    = inst count * CPI * clock cycle time</div><div class="line">（重要    = inst count * CPI / clock cycle rate</div></pre></td></tr></table></figure>
 <p>但是實一些基本指令比如<code>multiply</code>和<code>add</code>複雜程度肯定不一樣，當然乘法會執行時間比較長。就像我吃的少一點，我妹比我能吃。上式是假定我們吃的一樣多，也就是average CPI，當然如果給出具體的CPI（吃了幾袋）和instruction count（吃這麼多的有幾個人）也很容易算。<del>終於講完了吃大米</del><br></p>
