@@ -87,17 +87,19 @@
 
 
 
-<meta name="description" content="一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。">
+<meta name="description" content="Edge Computering: Vision and Challengespart1: overall5 parts in this paper, including overall, why needs and defination, case studies, challenges and oppotunities, together with conclusion. Mainly com">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hash Table">
-<meta property="og:url" content="http://yoursite.com/2017/08/19/Hash-Table/index.html">
+<meta property="og:title" content="edge-computing-vision-and-challenge">
+<meta property="og:url" content="http://yoursite.com/2018/07/08/Edge-computing-vision-and-challenge/index.html">
 <meta property="og:site_name" content="Anya Liang&#39;s Blog">
-<meta property="og:description" content="一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。">
+<meta property="og:description" content="Edge Computering: Vision and Challengespart1: overall5 parts in this paper, including overall, why needs and defination, case studies, challenges and oppotunities, together with conclusion. Mainly com">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-08-23T01:30:52.000Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3146629-ac167f9f3aebab4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644">
+<meta property="og:updated_time" content="2018-07-08T07:53:38.844Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hash Table">
-<meta name="twitter:description" content="一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。">
+<meta name="twitter:title" content="edge-computing-vision-and-challenge">
+<meta name="twitter:description" content="Edge Computering: Vision and Challengespart1: overall5 parts in this paper, including overall, why needs and defination, case studies, challenges and oppotunities, together with conclusion. Mainly com">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3146629-ac167f9f3aebab4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644">
 
 
 
@@ -125,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/19/Hash-Table/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/08/Edge-computing-vision-and-challenge/"/>
 
 
 
 
 
-  <title> Hash Table | Anya Liang's Blog </title>
+  <title> edge-computing-vision-and-challenge | Anya Liang's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -282,7 +284,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/Hash-Table/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/08/Edge-computing-vision-and-challenge/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -303,7 +305,7 @@
             
             
               
-                Hash Table
+                edge-computing-vision-and-challenge
               
             
           </h1>
@@ -318,8 +320,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-19T14:10:25+08:00">
-                2017-08-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-08T15:50:35+08:00">
+                2018-07-08
               </time>
             
 
@@ -354,39 +356,18 @@
       
 
       
-        <p>一种无序的数据结构，由数组(value) 和Hash Function组成，输入由Hash Function映射到数组索引，相同的输入得到相同的索引。<br><br><a id="more"></a></p>
-<h2 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h2><ul>
-<li><em>模拟映射关系</em><br></li>
-<li><p>大海捞针的寻找，如DNS解析（域名-&gt;IP地址)<br></p>
-</li>
-<li><p><em>cookie</em>，原理：让服务器把网页记住，需要的时候直接发给用户<br></p>
-</li>
-<li><em>防止重复</em><br></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">searched = &#123;&#125;</div><div class="line"></div><div class="line">def check(name):</div><div class="line">&quot;&quot;&quot;</div><div class="line">	检查name是否检查过</div><div class="line">	检查过则返回False，未检查过则加入字典，并返回True</div><div class="line">&quot;&quot;&quot; </div><div class="line">    if searched.get(name): </div><div class="line">        print(&quot;alreade searched&quot;)</div><div class="line">        return False</div><div class="line">    else:</div><div class="line">        print(&quot;haven&apos;t searched&quot;)</div><div class="line">        searched[name] = True #加入字典</div><div class="line">        return True</div></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>各种语言都提供了散列表的实现，python中为字典，如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dic = &#123;&#125; #or dic = dict()</div><div class="line"></div><div class="line">dic[&quot;anya&quot;] = 1</div></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="collision-冲突"><a href="#collision-冲突" class="headerlink" title="collision(冲突)"></a>collision(冲突)</h2><p>两个键映射到同一个位置<br><br>solution: 在这个位置存储一个链表</p>
-<p><br></p>
-<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><ul>
-<li>平均情况下，查找、插入、删除的时间复杂度都是O(1) <br><br>而O(1)不意味着马上，而是<strong>不管规模多大，所需时间相同</strong> 。<em>因为我们是通过给Hash Function传入key而获得value的，假设这个位置上只有一个值，在平均情况下时间复杂度是O(1)，而且不随规模增大而改变</em><br><br></li>
-<li>最糟情况(collision)存在大量冲突，时间复杂度是O(n) <br><br>冲突时的时间复杂度是O(1) + O(load_factor) = O(1 + load_factor)，所以最糟情况就是O(n)</li>
-</ul>
-<p><br></p>
-<h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><p>Hash Table避免冲突有赖于<strong>较低的填装因子和良好的散列函数</strong> </p>
-<h3 id="装填因子"><a href="#装填因子" class="headerlink" title="装填因子"></a>装填因子</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">填装因子 = 散列表包含的元素数 / 位置总数</div></pre></td></tr></table></figure>
-<p>调整长度(resizing)：当装填因子太大的时候，需要在散列表中添加位置 <br><br>装填因子越低，效率越高 <br><br>当装填因子大于<strong>0.7</strong>，需要调整长度。调整长度的开销很大，但平均而言，考虑调整长度的开销，时间复杂度也是O(1)(喵喵?)</p>
-<h3 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h3><p>良好的散列函数让数组中的值均匀分布，而糟糕的导致大量冲突(可以看一下SHA函数)</p>
-<p><br></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>哈希表一般不用自己实现，编程语言提供了它的实现，并假定时间复杂度是O(1)。</li>
-<li>自己实现的话，可以用数组和Hash Function。</li>
-<li>Hash Function应尽量避免冲突，并降低装填因子。</li>
-<li>装填因子大于0.7时，需要resizing。</li>
-<li>哈希表用于模拟映射关系、防重复、存储cookie。</li>
-</ul>
+        <h1 id="Edge-Computering-Vision-and-Challenges"><a href="#Edge-Computering-Vision-and-Challenges" class="headerlink" title="Edge Computering: Vision and Challenges"></a>Edge Computering: Vision and Challenges</h1><h2 id="part1-overall"><a href="#part1-overall" class="headerlink" title="part1: overall"></a>part1: overall</h2><p>5 parts in this paper, including overall, why needs and defination, case studies, challenges and oppotunities, together with conclusion. Mainly compared with <strong>cloud computing</strong>. </p>
+<a id="more"></a>
+<h2 id="part2-why-needs-and-defination"><a href="#part2-why-needs-and-defination" class="headerlink" title="part2: why needs and defination"></a>part2: why needs and defination</h2><h3 id="why-needs"><a href="#why-needs" class="headerlink" title="why needs"></a>why needs</h3><h4 id="Cloud’s-push-Cloud-computing-isn’t-good-enough"><a href="#Cloud’s-push-Cloud-computing-isn’t-good-enough" class="headerlink" title="Cloud’s push: Cloud computing isn’t good enough"></a>Cloud’s push: Cloud computing isn’t good enough</h4><h5 id="Latency-is-too-long-and-too-much-data-are-transferred-to-cloud"><a href="#Latency-is-too-long-and-too-much-data-are-transferred-to-cloud" class="headerlink" title="Latency is too long and too much data are transferred to cloud."></a>Latency is too long and too much data are transferred to cloud.</h5><h5 id="Privacy"><a href="#Privacy" class="headerlink" title="Privacy."></a>Privacy.</h5><h5 id="无线传输费电"><a href="#无线传输费电" class="headerlink" title="无线传输费电"></a>无线传输费电</h5><h4 id="IoT’s-pull-Electrical-devices-⬆️⬆️⬆️"><a href="#IoT’s-pull-Electrical-devices-⬆️⬆️⬆️" class="headerlink" title="IoT’s pull: Electrical devices ⬆️⬆️⬆️"></a>IoT’s pull: Electrical devices ⬆️⬆️⬆️</h4><h5 id="Electrical-devices-turn-from-data-consumer-to-data-consumer-productor-未来很多它们的数据都会在edge被处理，而非传到cloud"><a href="#Electrical-devices-turn-from-data-consumer-to-data-consumer-productor-未来很多它们的数据都会在edge被处理，而非传到cloud" class="headerlink" title="Electrical devices turn from data consumer to data consumer + productor. 未来很多它们的数据都会在edge被处理，而非传到cloud."></a>Electrical devices turn from data consumer to data consumer + productor. 未来很多它们的数据都会在edge被处理，而非传到cloud.</h5><h4 id="Data-consumer-gt-data-consumer-productor"><a href="#Data-consumer-gt-data-consumer-productor" class="headerlink" title="Data consumer -&gt; data consumer + productor"></a>Data consumer -&gt; data consumer + productor</h4><h3 id="defination"><a href="#defination" class="headerlink" title="defination"></a>defination</h3><p>Edge computing: computing on the <strong>edge of the network</strong>. Computing happens near the proximity of data sources.<br><img src="https://upload-images.jianshu.io/upload_images/3146629-ac167f9f3aebab4f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/644" alt=""><br>Edge可以是一个micro data centre的东西. </p>
+<h3 id="benefits"><a href="#benefits" class="headerlink" title="benefits"></a>benefits</h3><p>Fast. Save energy.</p>
+<h2 id="part3-case-studies"><a href="#part3-case-studies" class="headerlink" title="part3: case studies"></a>part3: case studies</h2><h3 id="cloud-offloads"><a href="#cloud-offloads" class="headerlink" title="cloud offloads"></a>cloud offloads</h3><p>Cloud: centralized, difficult to upload to cloud and download from cloud. <br><br>Edge: has certain computing capability, cloud can offload to edge and computing faster.<br><br>z.b. 导航软件把邻近地区的地图放在附近的edge上；信息筛选/aggregating在edge上做，⬇️transfer信息量；real-time app, ⬇️latency</p>
+<h3 id="video-analysics"><a href="#video-analysics" class="headerlink" title="video analysics"></a>video analysics</h3><p>Cloud: latency, privacy<br><br>z.b.<br>寻找失踪小孩.如果在云就要在centre找找找找，如果是edge就可以找特定区域的几个edge.</p>
+<h3 id="smart-home"><a href="#smart-home" class="headerlink" title="smart home"></a>smart home</h3><p>Cloud: large data amount, privacy<br><br>Edge: edge gateway(edge OS) at home process data</p>
+<h3 id="smart-city"><a href="#smart-city" class="headerlink" title="smart city"></a>smart city</h3><p>Big smart home.<br><br>Cloud: large data amount, too slow, bad location service<br>Edge: not large data amount, fast, good loc(如导航软件</p>
+<h3 id="collabotive-edge"><a href="#collabotive-edge" class="headerlink" title="collabotive edge"></a>collabotive edge</h3><h2 id="part4-challenges-and-oppotunities"><a href="#part4-challenges-and-oppotunities" class="headerlink" title="part4: challenges and oppotunities"></a>part4: challenges and oppotunities</h2><h3 id="programmability"><a href="#programmability" class="headerlink" title="programmability"></a>programmability</h3><p>Computing stream</p>
+<h3 id="naming"><a href="#naming" class="headerlink" title="naming"></a>naming</h3><p>都不够成熟的NDN, Mobile First. <br><br>z.b. smart home:<br><code>where.who.what</code></p>
+<h3 id="data-abstraction-没太看懂"><a href="#data-abstraction-没太看懂" class="headerlink" title="data abstraction(没太看懂"></a>data abstraction(没太看懂</h3><h3 id="service-management-没太看懂"><a href="#service-management-没太看懂" class="headerlink" title="service management(没太看懂"></a>service management(没太看懂</h3><h3 id="optimization-metrics-没太看懂"><a href="#optimization-metrics-没太看懂" class="headerlink" title="optimization metrics(没太看懂"></a>optimization metrics(没太看懂</h3><p>（回去再看一下）</p>
+<h2 id="part5-conclusion"><a href="#part5-conclusion" class="headerlink" title="part5: conclusion"></a>part5: conclusion</h2><p> <del>最近忽然发现blog挖了好多坑啊。。想哭</del></p>
 
       
     </div>
@@ -417,15 +398,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/04/18/Chap-One-CA/" rel="next" title="Computer Abstractions and Technology">
+                <i class="fa fa-chevron-left"></i> Computer Abstractions and Technology
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/27/Leetcode-31/" rel="prev" title="Leetcode31 & Generating Permutations Lexicographically">
-                Leetcode31 & Generating Permutations Lexicographically <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -543,7 +524,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#适用范围"><span class="nav-number">1.</span> <span class="nav-text">适用范围</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#collision-冲突"><span class="nav-number">3.</span> <span class="nav-text">collision(冲突)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间复杂度"><span class="nav-number">4.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#性能"><span class="nav-number">5.</span> <span class="nav-text">性能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#装填因子"><span class="nav-number">5.1.</span> <span class="nav-text">装填因子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#散列函数"><span class="nav-number">5.2.</span> <span class="nav-text">散列函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Edge-Computering-Vision-and-Challenges"><span class="nav-number">1.</span> <span class="nav-text">Edge Computering: Vision and Challenges</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#part1-overall"><span class="nav-number">1.1.</span> <span class="nav-text">part1: overall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part2-why-needs-and-defination"><span class="nav-number">1.2.</span> <span class="nav-text">part2: why needs and defination</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#why-needs"><span class="nav-number">1.2.1.</span> <span class="nav-text">why needs</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Cloud’s-push-Cloud-computing-isn’t-good-enough"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Cloud’s push: Cloud computing isn’t good enough</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Latency-is-too-long-and-too-much-data-are-transferred-to-cloud"><span class="nav-number">1.2.1.1.1.</span> <span class="nav-text">Latency is too long and too much data are transferred to cloud.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Privacy"><span class="nav-number">1.2.1.1.2.</span> <span class="nav-text">Privacy.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#无线传输费电"><span class="nav-number">1.2.1.1.3.</span> <span class="nav-text">无线传输费电</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IoT’s-pull-Electrical-devices-⬆️⬆️⬆️"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">IoT’s pull: Electrical devices ⬆️⬆️⬆️</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Electrical-devices-turn-from-data-consumer-to-data-consumer-productor-未来很多它们的数据都会在edge被处理，而非传到cloud"><span class="nav-number">1.2.1.2.1.</span> <span class="nav-text">Electrical devices turn from data consumer to data consumer + productor. 未来很多它们的数据都会在edge被处理，而非传到cloud.</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Data-consumer-gt-data-consumer-productor"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">Data consumer -> data consumer + productor</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#defination"><span class="nav-number">1.2.2.</span> <span class="nav-text">defination</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#benefits"><span class="nav-number">1.2.3.</span> <span class="nav-text">benefits</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part3-case-studies"><span class="nav-number">1.3.</span> <span class="nav-text">part3: case studies</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cloud-offloads"><span class="nav-number">1.3.1.</span> <span class="nav-text">cloud offloads</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#video-analysics"><span class="nav-number">1.3.2.</span> <span class="nav-text">video analysics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#smart-home"><span class="nav-number">1.3.3.</span> <span class="nav-text">smart home</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#smart-city"><span class="nav-number">1.3.4.</span> <span class="nav-text">smart city</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#collabotive-edge"><span class="nav-number">1.3.5.</span> <span class="nav-text">collabotive edge</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part4-challenges-and-oppotunities"><span class="nav-number">1.4.</span> <span class="nav-text">part4: challenges and oppotunities</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#programmability"><span class="nav-number">1.4.1.</span> <span class="nav-text">programmability</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#naming"><span class="nav-number">1.4.2.</span> <span class="nav-text">naming</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#data-abstraction-没太看懂"><span class="nav-number">1.4.3.</span> <span class="nav-text">data abstraction(没太看懂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#service-management-没太看懂"><span class="nav-number">1.4.4.</span> <span class="nav-text">service management(没太看懂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#optimization-metrics-没太看懂"><span class="nav-number">1.4.5.</span> <span class="nav-text">optimization metrics(没太看懂</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#part5-conclusion"><span class="nav-number">1.5.</span> <span class="nav-text">part5: conclusion</span></a></li></ol></li></ol></div>
             
 
           </div>
